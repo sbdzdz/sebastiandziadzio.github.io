@@ -27,10 +27,12 @@ cool_authors = ('austen', 'blake', 'bryant',
 titles = [title for title in files if title.startswith(cool_authors)]
 texts = [gutenberg.raw(title) for t in titles] 
 ```
-Note how `str.startswith` allows supplying a tuple of strings to test for. Now, there are fifteen titles in `titles`. Conveniently (and completely coincidentally) they fall in five distinct categories:
-* Jane Austen: Emma, Sense and Sensibility, Persuasion
-* Gilberth Chesterton: 
-* Shakespeare's plays: Julius Caesar, [The Scottish Play](https://www.youtube.com/watch?v=h--HR7PWfp0), Hamlet
+Note how `str.startswith` allows supplying a tuple of strings to test for. Now, there are fifteen titles in `titles`. Conveniently (and completely coincidentally) they fall into five distinct categories I spent far too much time naming:
+* Mr. Darcy et al.: Emma, Persuasion, Sense and Sensibility
+* Chestertomes: The Ball and the Cross, The Wisdom of Father Brown, The Man Who Was Thursday
+* The Bard's Tales: Julius Caesar, [The Scottish Play](https://www.youtube.com/watch?v=h--HR7PWfp0), Hamlet
+* BMW (Blake, Milton, Whitman): Poems, Paradise Lost, Leaves of Grass
+* BBC (Bryant, Burgess, Carroll): Stories to Tell to Children, The Adventures of Buster Bear, Alice in Wonderland   
  
 
 PART ONE
