@@ -17,18 +17,23 @@ We should start by fetching some books. There are many ways to do it, but for st
 {% highlight python %}
 >>> from nltk.corpus import gutenberg
 >>> gutenberg.fileids()
-['austen-emma.txt', 'austen-persuasion.txt', 'austen-sense.txt', 'bible-kjv.txt', 'blake-poems.txt', 'bryant-stories.txt', 'burgess-busterbrown.txt', 'carroll-alice.txt', 'chesterton-ball.txt', 'chesterton-brown.txt', 'chesterton-thursday.txt', 'edgeworth-parents.txt', 'melville-moby_dick.txt', 'milton-paradise.txt', 'shakespeare-caesar.txt', 'shakespeare-hamlet.txt', 'shakespeare-macbeth.txt', 'whitman-leaves.txt']
+['austen-emma.txt', 'austen-persuasion.txt', 'austen-sense.txt',
+ 'bible-kjv.txt', 'blake-poems.txt', 'bryant-stories.txt',
+ 'burgess-busterbrown.txt', 'carroll-alice.txt', 'chesterton-ball.txt',
+ 'chesterton-brown.txt', 'chesterton-thursday.txt', 'edgeworth-parents.txt',
+ 'melville-moby_dick.txt', 'milton-paradise.txt', 'shakespeare-caesar.txt',
+ 'shakespeare-hamlet.txt', 'shakespeare-macbeth.txt', 'whitman-leaves.txt']
 {% endhighlight %}
 This rather eclectic collection will serve as our dataset. How about we narrow it down to the cool authors:
 {% highlight python %}
 from nltk.corpus import gutenberg
 
-files = gutenberg.fileids() 
+fileids = gutenberg.fileids() 
 cool_authors = ('austen', 'blake', 'bryant',
                 'burgess', 'carroll', 'chesterton',
                 'milton', 'shakespeare', 'whitman')
 
-titles = [f for f in files if f.startswith(cool_authors)]
+titles = [title for title in fileids if title.startswith(cool_authors)]
 texts = [gutenberg.raw(title) for title in titles] 
 {% endhighlight %}
 
@@ -53,21 +58,3 @@ Conveniently (and completely coincidentally) the remaining titles fall into five
 * Stories to Tell to Children,
 * The Adventures of Buster Bear,
 * Alice in Wonderland   
- 
-PART ONE
-1. What is project Gutenberg? What do I want to do? What is tf-idf and why it may be useful?.
-2. Corpus from NLTK.
-* show the code (perhaps interactive)
-* calculate tf-idf
-* show common words
-* calculate cosine similarity
-* show results (visualisation)
-3. Reading files from disk.
-4. Teaser for part two
-PART TWO
-1. Downloading books.
-2. Calculate tf-idf (perhaps different classes, authors).
-3. Calculate cosine similarity.
-4. Show results (visulaisation).
-5. Train classifier (genres, authors).
-6. Conclusions, discussions, full code, links.
