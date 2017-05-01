@@ -14,13 +14,13 @@ What's even more fun are vector space models and dimensionality reduction algori
 
 ### Chapter One: In Which Books are Fetched and Puns are Made
 We should start by fetching some books. There are many ways to do it, but for starters let's just use what [NLTK](http://www.nltk.org/) has to offer: 
-```python
+{% highlight python %}
 >>> from nltk.corpus import gutenberg
 >>> gutenberg.fileids()
 ['austen-emma.txt', 'austen-persuasion.txt', 'austen-sense.txt', 'bible-kjv.txt', 'blake-poems.txt', 'bryant-stories.txt', 'burgess-busterbrown.txt', 'carroll-alice.txt', 'chesterton-ball.txt', 'chesterton-brown.txt', 'chesterton-thursday.txt', 'edgeworth-parents.txt', 'melville-moby_dick.txt', 'milton-paradise.txt', 'shakespeare-caesar.txt', 'shakespeare-hamlet.txt', 'shakespeare-macbeth.txt', 'whitman-leaves.txt']
-```
+{% endhighlight %}
 This rather eclectic collection will serve as our dataset. How about we narrow it down to the cool authors:
-```python
+{% highlight python %}
 from nltk.corpus import gutenberg
 
 files = gutenberg.fileids() 
@@ -28,9 +28,10 @@ cool_authors = ('austen', 'blake', 'bryant',
                 'burgess', 'carroll', 'chesterton',
                 'milton', 'shakespeare', 'whitman')
 
-titles = [title for title in files if title.startswith(cool_authors)]
-texts = [gutenberg.raw(title) for t in titles] 
-```
+titles = [f for f in files if f.startswith(cool_authors)]
+texts = [gutenberg.raw(title) for title in titles] 
+{% endhighlight %}
+
 Conveniently (and completely coincidentally) the remaining titles fall into five distinct categories I spent far too much time naming:
 1. Mr. Darcy et al.:
 * Emma,
