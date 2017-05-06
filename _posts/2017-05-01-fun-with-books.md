@@ -14,37 +14,49 @@ What's even more fun are vector space models, clustering algorithms, and dimensi
 
 ### Chapter One: In Which Books are Fetched and Puns are Made
 We should start by fetching some books. There are many ways to do it, but for starters let's just use what NLTK has to offer: 
-{% highlight python %}
+
+```python
 >>> from nltk.corpus import gutenberg
->>> gutenberg.fileids()
+>>> fileids = gutenberg.fileids()
+>>> fileids
 ['austen-emma.txt', 'austen-persuasion.txt', 'austen-sense.txt',
  'bible-kjv.txt', 'blake-poems.txt', 'bryant-stories.txt',
  'burgess-busterbrown.txt', 'carroll-alice.txt', 'chesterton-ball.txt',
  'chesterton-brown.txt', 'chesterton-thursday.txt', 'edgeworth-parents.txt',
  'melville-moby_dick.txt', 'milton-paradise.txt', 'shakespeare-caesar.txt',
  'shakespeare-hamlet.txt', 'shakespeare-macbeth.txt', 'whitman-leaves.txt']
-{% endhighlight %}
+```
+
 This rather eclectic collection will serve as our dataset. How about we narrow it down to the cool authors:
-{% highlight python %}
-from nltk.corpus import gutenberg
 
-fileids = gutenberg.fileids() 
-cool_authors = ('austen', 'blake', 'bryant',
-                'burgess', 'carroll', 'chesterton',
-                'milton', 'shakespeare', 'whitman')
+```python
+>>> boring = ['bible-kjv.txt',
+...           'edgeworth-parents.txt',
+...           'melville-moby_dick.txt'] 
+>>> titles = [fileid for fileid in fileids if fileid not in boring] 
+>>> texts = [gutenberg.raw(title) for title in titles] 
+```
 
-titles = [title for title in fileids if title.startswith(cool_authors)]
-texts = [gutenberg.raw(title) for title in titles] 
-{% endhighlight %}
+Let's be pedantic and use some `regexp` magic to strip the titles:
+
+```python
+>>> titles = [re.search(r'-(.*?)\.', title).group(1) for title in titles] 
+>>> titles
+['emma', 'persuasion', 'sense',
+ 'poems', 'stories', 'busterbrown', 
+ 'alice', 'ball', 'brown',
+ 'thursday', 'paradise', 'caesar',
+ 'hamlet', 'macbeth', 'leaves']
+```
 
 Conveniently (and completely coincidentally) the remaining titles fall into five distinct categories I spent far too much time naming:
-- Darcy and Company: Emma, Persuasion, Sense and Sensibility
-- Bard's Tales: Julius Caesar, [The Scottish Play](https://www.youtube.com/watch?v=h--HR7PWfp0), Hamlet
-- Chestertomes: The Ball and the Cross, The Wisdom of Father Brown, The Man Who Was Thursday
-- BMW (Blake, Milton, Whitman): Poems, Paradise Lost, Leaves of Grass
-- BBC (Bryant, Burgess, Carroll): Stories to Tell to Children, The Adventures of Buster Bear, Alice in Wonderland   
+- Darcy and Company: `emma`, `persuasion`, `sense` 
+- Bard's Tales: `caesar`, `macbeth`, `hamlet`
+- Chestertomes: `ball`, `brown`, `thursday`
+- BMW (Blake, Milton, Whitman): `poems`, `paradise`, `leaves`
+- BBC (Bryant, Burgess, Carroll): `stories`, `buster`, `alice`
 
 In other words, our modest library contains three Jane Austen's novels, three Shakespeare's plays, three novels by Gilbert K. Chesterton, three poem collections, and three children books (I'm sorry, Mr. Carroll). Let's find out if computers share our intuitions.
 
 ### Chapter Two: In which Books are Magically Turned into Numbers and What Happens Then
-
+[^1]: [Don't mention Macbeth](https://www.youtube.com/watch?v=h--HR7PWfp0) 
