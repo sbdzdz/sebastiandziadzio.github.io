@@ -22,7 +22,7 @@ show_related_posts:   true
 show_post_footers:    false
 show_social_icons:    true
 ajaxify_contact_form: false
-enable_mathjax: false
+enable_mathjax: true
 extended_fonts: false
 enable_anchorjs: false
 # Preview image for social media aka og:image and twitter:image
@@ -108,6 +108,8 @@ text:
 
 # Build settings
 markdown:     kramdown
+kramdown:
+    math_engine: mathjax
 redcarpet:
   extensions: ['smart', 'tables', 'with_toc_data']
 permalink:    pretty
