@@ -1,8 +1,8 @@
 ---
 layout:     post
 title:      "Vector space models"
-date:       2017-08-05
-summary:    Playing around with books from project Gutenberg.
+date:       2017-08-02
+summary:    A quick primer on representing documents with vectors.
 categories: nlp ml
 custom_js:
     - katex
