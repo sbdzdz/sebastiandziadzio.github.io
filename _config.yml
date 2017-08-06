@@ -7,6 +7,9 @@ baseurl:     ""
 url:         "http://sebastiandziadzio.com"
 date_format: "%B %-d, %Y"
 
+# code highlighting
+highlighter: rouge
+
 # Google services
 google_verification:
 # Use either direct GA implementation or set up GTM account

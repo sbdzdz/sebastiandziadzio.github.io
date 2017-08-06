@@ -1,5 +1,6 @@
 pre,
 pre code {
+  white-space: pre-wrap;
   background-color: transparent;
   border-radius: $pre-border-radius;
 }
@@ -19,7 +20,11 @@ pre {
   line-height: 1.11;
   overflow-x: scroll;
   margin-bottom: 0.88em;
-  background-color: $pre-background-color;
+}
+
+.language-python {
+    background-color:white;
+    background-color: $pre-background-color;
 }
 
 .highlight .p {
