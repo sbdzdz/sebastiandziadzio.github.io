@@ -6,6 +6,7 @@ summary:    A quick primer on representing documents with vectors.
 categories: nlp ml
 custom_js:
     - katex
+published: false
 ---
 
 Before we can run any machine learning algorithms on text documents, we need to find a way to represent them as vectors. An ideal representation would distribute documents in a multi-dimensional vector space in such a way that similar documents end up close to each other (for now let's not worry about what "similar" or "close" means). One idea could be to construct a following term-document matrix:
@@ -63,4 +64,3 @@ Whoa, looks like it fixed it a bit too much. Because *spam* and *and* appear in 
 
 $$ \text{idf}(t, D)=\log\left(1+\frac{|D|}{|{d \in D: t \in d}|}\right) $$
 
-A matrix of tf-idf weights seems to be a nice way to represent text documents. Let us now return to our microlibrary.
