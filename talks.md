@@ -6,6 +6,4 @@ tags: talks
 ---
 # Talks
 
-* NLP for the Impatient, [PyData Warsaw Conference 2017.](https://pydata.org/warsaw2017)
-
-Slides: [online](/talks/pydata), [PDF](/download/pydata.pdf)
+  NLP for the Impatient, PyData Warsaw 2017: [online](/talks/pydata), [PDF](/talks/pydata/pydata.pdf)
