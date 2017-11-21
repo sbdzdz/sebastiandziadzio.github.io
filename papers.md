@@ -17,3 +17,5 @@ tags: papers
 
 ## 2014
 *The Speech Technology Course at AGH University of Science and Technology in Cracow as an Example of Interdisciplinary Teaching*, Zamojskie Studia i Materiały: [abstract](https://www.infona.pl/resource/bwmeta1.element.desklight-8158ba22-2cc7-4b4b-b347-53c0f9783595).
+
+*Unit Selection Text-to-Speech System for Polish*, BSc Thesis: [full text](/papers/bachelor.pdf).
