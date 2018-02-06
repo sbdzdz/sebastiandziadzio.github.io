@@ -8,7 +8,6 @@ url:         "http://sebastiandziadzio.com"
 date_format: "%B %-d, %Y"
 
 # code highlighting
-highlighter: rouge
 
 # Google services
 google_verification:
@@ -16,7 +15,6 @@ google_verification:
 # - using both will skew your data (leave blank to not use at all)
 google_analytics:
 google_tag_manager:
-# Bing services
 bing_verification:
 
 # Optional features
@@ -32,16 +30,13 @@ enable_anchorjs: false
 post_preview_image: true
 
 # Facebook Page integration
-# (for instant articles and other stuff)
 fb_page: false
 fb_page_id:
 
 # Disqus post comments
-# (leave blank to disable Disqus)
 disqus_shortname:
 
 # Facebook Comments plugin
-# (leave blank to disable Facebook Comments, otherwise set it to true)
 facebook_comments:
 facebook_appid:
 facebook_comments_number: 10
@@ -66,7 +61,6 @@ google_scholar: 8vAIQXoAAAAJ
 
 # Post sharing icons
 show_sharing_icons: false
-# Change to 'true' to enable individual icons
 share_facebook: true
 share_twitter: true
 share_googleplus: false
@@ -111,9 +105,11 @@ text:
   og_locale: 'en_US'
 
 # Build settings
-markdown:     kramdown
+markdown: kramdown
 kramdown:
     math_engine: mathjax
+    input: GFM
+    highlighter: rouge 
 redcarpet:
   extensions: ['smart', 'tables', 'with_toc_data']
 permalink:    pretty
