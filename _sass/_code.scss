@@ -9,6 +9,11 @@ code {
 code {
 }
 
+.highlighter-rouge {
+  color: #7a7a7a;
+  font-size: 1.1rem;
+}
+
 pre {
   padding: 1.125em;
   line-height: 1.11;
@@ -19,7 +24,7 @@ pre {
 .language-python {
   background-color: $pre-background-color;
   margin-bottom: 1em;
-  font-size: 0.8rem;
+  font-size: 1rem;
   color: #7a7a7a;
 }
 
