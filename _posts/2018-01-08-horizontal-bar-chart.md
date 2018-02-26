@@ -4,7 +4,7 @@ title:      "Data science cheatsheet: horizontal bar charts in Python"
 date:       2018-01-10
 summary:    Quick and pretty horizontal bar charts in Python and R.
 categories: dataviz, ds-cheatsheet
-published:  true
+published:  false
 ---
 
 Working with data, I noticed there are things I Google almost on a daily basis. This series of posts is a chaotic collection of simple recipes in Python and R written in the hope that I'll finally memorize them. I took an effort to make the code as copypastable as possible, so all examples should just work™. The code from post is available [here](https://github.com/sebastiandziadzio/data-science-cheatsheet/blob/master/horizontal_bar_chart.ipynb).
