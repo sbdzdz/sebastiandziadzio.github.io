@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      "Movable Type"
-date:       2018-02-26
+date:       2018-03-12
 summary:    Playing around with books from project Gutenberg.
 categories: nlp ml
 custom_js:
