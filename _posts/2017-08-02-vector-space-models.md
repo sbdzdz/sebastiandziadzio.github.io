@@ -2,14 +2,32 @@
 layout:     post
 title:      "Vector space models"
 date:       2017-08-02
-summary:    A quick primer on representing documents with vectors.
+summary:    Representing text documents with vectors.
 categories: nlp ml
 custom_js:
     - katex
-published: false
+published: true
 ---
 
-Before we can run any machine learning algorithms on text documents, we need to find a way to represent them as vectors. An ideal representation would distribute documents in a multi-dimensional vector space in such a way that similar documents end up close to each other (for now let's not worry about what "similar" or "close" means). One idea could be to construct a following term-document matrix:
+## What is a vector space model?
+Computers, as the name suggest, are pretty good with numbers, so it's no surprise most machine learning algorithms take real-valued vectors as input. If we want to use them on text, we need a way to represent it with numbers. Vector space models do exactly that – they transform text documents into vectors (arrays) of numbers.
+
+The deep learning era brought about a couple of [clever solutions](https://github.com/MaxwellRebo/awesome-2vec) to that problem. In this post we're going to keep it old school and build a decent vector space model from the ground up using only very simple math. By the end of this article you'll learn how to turn text documents into vectors. It's the first step of a variety of language processing tasks, such as document clustering or information retrieval.
+
+## First attempt: set of words
+Depending on the application, we might want the vectors to have different properties, so it makes sense to choose the application first. Let's say we have a collection of short documents and are interested in measurig similarity between them. In this setting, an ideal model would distribute documents in a multi-dimensional vector space in such a way that semantically similar documents end up close to each other (for some definition of "similar" and "close"). Here are our documents:
+
+```python
+doc1 = 'egg bacon sausage and spam'
+doc2 = 'spam bacon sausage and spam'
+doc3 = 'spam egg spam spam bacon and spam'
+D = [doc1, doc2, doc3]
+```
+
+
+Let's start by building a simple collection of documents: 
+
+The simplest idea would be to construct a following term-document matrix:
 
 {% include image name="one_hot.png" width="500" caption=""%}
 

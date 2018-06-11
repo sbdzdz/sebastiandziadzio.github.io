@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      "Data science cheatsheet: horizontal bar charts in Python"
+title:      "DS cheatsheet: horizontal bar charts in Python"
 date:       2018-01-10
 summary:    Quick and pretty horizontal bar charts in Python and R.
 categories: dataviz, ds-cheatsheet
@@ -27,7 +27,7 @@ sorted_data = sorted(data.items(), key=operator.itemgetter(1), reversed=True)
 categories, values = zip(*sorted_data) 
 ```
 
-You can treat the slightly cryptic {% ihighlight python %} zip(*sorted_data) {% endihighlight %} as the [reverse of zip](https://stackoverflow.com/questions/12974474/how-to-unzip-a-list-of-tuples-into-individual-lists). The sorting part is a bit hard to remember, so I often use the following ~~hack~~ trick to get the categories and values in descending order:
+You can treat the slightly cryptic `zip(*sorted_data)` as the [reverse of zip](https://stackoverflow.com/questions/12974474/how-to-unzip-a-list-of-tuples-into-individual-lists). The sorting part is a bit hard to remember, so I often use the following ~~hack~~ trick to get the categories and values in descending order:
 
 ```python
 from collections import Counter
@@ -36,7 +36,7 @@ counter = Counter(data)
 categories, values = zip(*counter.most_common())
 ```
 
-This also allows you to limit the chart to top *n* categories, simply with {% ihighlight python %} most_common(n) {% endihighlight %}.
+This also allows you to limit the chart to top *n* categories, simply with `most_common(n)`.
 
 ### Matplotlib
 Here's how to get a nice chart with raw Matplotlib:
