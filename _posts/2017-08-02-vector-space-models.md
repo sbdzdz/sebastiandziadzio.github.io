@@ -23,56 +23,70 @@ I always find it easier to work on an example, so let's say these are our docume
 first = 'egg bacon sausage and spam'
 second = 'spam bacon sausage and spam'
 third = 'spam egg spam and spam'
+
+documents = [first, second, third]
 ```
 
-We'll start with a simple idea. Let's choose a set of words (called a *vocabulary*), arrange them in a row and represent documents as rows of 1s and 0s, where 1 means the corresponding word occurs in the document and 0 means it doesn't:
+We'll start with a simple idea. Let's assign every word to a column and represent documents as rows of 1s and 0s, where 1 means the corresponding word occurs in the document and 0 means it doesn't:
 
 {% include image name="first_attempt.png" width="500" caption=""%}
 
-The matrix of this form is called a *term-document matrix*. The numbers in the matrix are *weights*. A document is represented by a *document vector* – a list of weights, each corresponding to a *term* from the vocabulary. Our model is not very expressive – the weights are only ones and zeros and the vocabulary is rather small. Don't worry – we're only getting started! Here's how to build our first model in Python:
+The matrix of this form is called a *term-document matrix*. The numbers in the matrix are *weights*. A document is represented by a *document vector* – a list of weights, each corresponding to a *term*. To build the model, we first need to build the list of terms, also known as the *dictionary*: 
 
+```python
+def build_vocabulary(documents):
+    vocabulary = set()
+    for d in documents:
+        vocabulary.update(d.split())
+    return sorted(vocabulary)
+
+vocabulary = build_vocabulary(documents)
+print(vocabulary)
+```
+
+```sh
+['and', 'bacon', 'egg', 'homar', 'sausage', 'spam']
+```
+
+Once we have the vocabulary, we can use it to build the term-document matrix (`tdm` for friends):
+```python
+def build_tdm(documents, vocabulary):
+    tdm = []
+    for d in documents:
+        tdm.append([int(t in d) for t in vocabulary])
+    return tdm
+
+tdm = build_tdm(documents, vocabulary)
+print(tdm)
+```
+```sh
+[[1, 1, 1, 0, 1, 1], [1, 1, 0, 1, 1, 1], [1, 0, 1, 0, 0, 1]]
+```
+
+Ok, that works, but 
 ```python
 from sklearn.feature_extraction.text import CountVectorizer
 
-documents = [first, second, third]
 vectorizer = CountVectorizer(binary=True)
-term_document_matrix = vectorizer.fit_transform(documents)
-
-print(term_document_matrix)
+tdm = vectorizer.fit_transform(documents).to_array()
+print(tdm)
 ```
 ```sh
-  (0, 4)	1
-  (0, 0)	1
-  (0, 3)	1
-  (0, 1)	1
-  (0, 2)	1
-  (1, 4)	1
-  (1, 0)	1
-  (1, 3)	1
-  (1, 1)	1
-  (2, 4)	1
-  (2, 0)	1
-  (2, 2)	1
+[[1 1 1 0 1 1]
+ [1 1 0 1 1 1]
+ [1 0 1 0 0 1]]
 ```
-Ok, that looks weird. To understand what's going on here, note that in practical applications the vocabulary can contain thousands of words. As a result, the term-document matrix for a large collection of documents will have lots of 0s in it. The `CountVectorizer` is trying to save space by recording only the positions of 1s as pairs of (row, column) coordinates. A matrix with lots of zeros in it is called sparse. To get the full picture, we need to convert it to a (you guessed it) dense representation: 
+Nice! Of course, we can see the vocabulary as well:
+
 ```python
-print(term_document_matrix.toarray())
+vocabulary = vectorizer.get_feature_names()
+print(vocabulary)
 ```
 ```sh
-[[1 1 1 1 1]
- [1 1 0 1 1]
- [1 0 1 0 1]]
+['and', 'bacon', 'egg', 'homar', 'sausage', 'spam']
 ```
 
-The terms will be sorted alphabetically. You can check it for yourself with the `get_feature_names` method:
-```python
-print(vectorizer.get_feature_names())
-```
-```sh
-['and', 'bacon', 'egg', 'sausage', 'spam']
-```
-
-Of course, a proper vector space model must be able to convert any text document into a vector:
+Now, a proper vector space model must be able to convert any text document into a vector:
 ```python
 print(vectorizer.transform(['spam spam aand spam']).toarray())
 ```
