@@ -2,7 +2,7 @@
 title:       Sebastian Dziadzio 
 email:       sebastian.dziadzio@gmail.com
 author:      Sebastian Dziadzio
-description: "I write code to make sense of data."
+description: "Hi! My name is Sebastian Dziadzio. I'm a software developer interested in machine learning, data science, tech buzzwords, and Oxford commas."
 baseurl:     ""
 url:         "http://sebastiandziadzio.com"
 date_format: "%B %-d, %Y"
@@ -10,9 +10,7 @@ date_format: "%B %-d, %Y"
 # code highlighting
 
 # Google services
-google_verification:
-# Use either direct GA implementation or set up GTM account
-# - using both will skew your data (leave blank to not use at all)
+google_verification: "0tJVN22EZYWN84z1dZcUw39QSoOYTC8AqmatNBV9l1w"
 google_analytics:
 google_tag_manager:
 bing_verification:
@@ -61,10 +59,10 @@ google_scholar: 8vAIQXoAAAAJ
 
 # Post sharing icons
 show_sharing_icons: false
-share_facebook: true
-share_twitter: true
+share_facebook: false
+share_twitter: false
 share_googleplus: false
-share_linkedin: true
+share_linkedin: false
 share_digg: false
 share_tumblr: false
 share_reddit: false
