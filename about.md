@@ -4,9 +4,9 @@ title: about
 permalink: /about/
 tags: about
 ---
-# I write code to make sense of data
+# Hi! My name is Sebastian.
 
-My name is Sebastian Dziadzio. I'm a software developer with a passion for natural language processing, machine learning, tech buzzwords, and Oxford commas. I love Python, have a love-hate relationship with R, and sometimes flirt with C++. When not coding, I'm usually fencing, reading, or playing Ultimate.
+I'm a software developer with a passion for data science, machine learning, tech buzzwords, and Oxford commas. I love Python, have a love-hate relationship with R, and sometimes flirt with C++. When not coding, I'm usually fencing, reading, or playing Ultimate.
 
 Currently I live in Munich, working at [Cliqz](http://cliqz.com) on making the Internet more private.
 
