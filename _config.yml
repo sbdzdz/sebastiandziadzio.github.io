@@ -118,4 +118,4 @@ plugins:
   - jekyll-paginate
   - jekyll-sitemap
 # https://github.com/jekyll/jekyll/issues/2938
-exclude: [vendor, notebooks]
+exclude: [vendor, notebooks, Gemfile, Gemfile.lock, Rakefile, deploy.sh, scraps, latex, LICENSE.txt]
