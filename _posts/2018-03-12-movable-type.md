@@ -4,8 +4,6 @@ title:      "Movable Type"
 date:       2018-03-12
 summary:    Playing around with books from project Gutenberg.
 categories: nlp ml
-custom_js:
-    - katex
 published: true
 ---
 
@@ -169,7 +167,7 @@ Poor Yorick tells us quite a lot about Shakespearean orthography. It seems *y* w
 
 ## Chapter Four: k-Means to an End
 
-Wordclouds were a cool digression, but it's time to get back to the main question – what happens if we try to automatically group our books into categories? We'll use the k-means clustering algorithm to find out. To understand how it works, think of every book vector as a point in a high-dimensional space. We start by randomly choosing $$k$$ points as means, create clusters by assigning every book to the nearest mean and then move each mean to the center of its cluster. After repeating this process a couple of times, it usually converges, although often to a local optimum. How do we choose $$k$$? We can just set it to five, since we want five clusters, but in general it's a problem deserving at least a [Wikipedia page](https://en.wikipedia.org/wiki/Determining_the_number_of_clusters_in_a_data_set). 
+Wordclouds were a cool digression, but it's time to get back to the main question – what happens if we try to automatically group our books into categories? We'll use the k-means clustering algorithm to find out. To understand how it works, think of every book vector as a point in a high-dimensional space. We start by randomly choosing k points as means, create clusters by assigning every book to the nearest mean and then move each mean to the center of its cluster. After repeating this process a couple of times, it usually converges, although often to a local optimum. How do we choose k? We can just set it to five, since we want five clusters, but in general it's a problem deserving at least a [Wikipedia page](https://en.wikipedia.org/wiki/Determining_the_number_of_clusters_in_a_data_set).
 
 Once again, `sklearn` has us covered – it even works on sparse matrices! We can find the clusters in two lines of code (and then spend six more trying to print them):
 
@@ -208,7 +206,7 @@ kmeans = KMeans(n_clusters=5, n_init=50)
 3: shakespeare-caesar, shakespeare-hamlet, shakespeare-macbeth
 4: bryant-stories, burgess-busterbrown, carroll-alice
 ```
-Nice! This time we find a better solution and the clustering is exactly as expected. Unless you're really unlucky, the result should be consistent if you re-run the code. But how do we know it's better? The $$k$$-means algorithm chooses a solution with lowest inertia. We can use it to compare different clusterings:
+Nice! This time we find a better solution and the clustering is exactly as expected. Unless you're really unlucky, the result should be consistent if you re-run the code. But how do we know it's better? The k-means algorithm chooses a solution with lowest inertia. We can use it to compare different clusterings:
 ```python
 print(kmeans.inertia_)
 ```
@@ -266,4 +264,4 @@ I guess the main lesson here is that simple techniques can get you pretty far. T
 [^3]: Ok I might [over-research](https://en.wikipedia.org/wiki/Sexuality_in_Christian_demonology) things.
 [^4]: Those three have quite a lot in common. Blake was evidently a Milton's fanboy – he illustrated Milton's work more often than that of any other author and even wrote an epic poem called Milton, starring John Milton as a falling star entering Blake's foot ([I'm not making this up](https://en.wikipedia.org/wiki/Milton:_A_Poem_in_Two_Books)). Blake, in turn, was probably a major inspiration for Whitman, who even based the design of his own burial vault on Blake's engraving.
 [^5]: The sum of squared distances is more of an intuition, we're really minimizing within-cluster variance, but they're the same in this case.
-[^6]: Mathematicians like to claim it is in fact trivial. To imagine a four-dimensional space, you first imagine an $$n$$-dimensional space and then simply set $$n=4$$.
+[^6]: Mathematicians like to claim it is in fact trivial. To imagine a four-dimensional space, you first imagine an n-dimensional space and then simply set n=4.
