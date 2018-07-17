@@ -4,18 +4,14 @@ title:      "Vector space models"
 date:       2017-08-02
 summary:    Representing text documents with vectors.
 categories: nlp ml
-custom_js:
-    - katex
 published: true
 ---
 
 ## What is a vector space model?
-Computers, as the name suggest, are pretty good with numbers, so it's no surprise most machine learning algorithms take real-valued vectors as input. If we want them to run on text, we need a way to represent it with numbers. A vector space model does exactly that – it transforms a text documents into a vector of numbers.
-
-The deep learning era brought about a couple of [clever solutions](https://github.com/MaxwellRebo/awesome-2vec) to that problem. In this post we're going to reinvent a classic vector space model called tf-idf. We'll then use it to build a simple search engine!
+Computers, as the name suggest, are good with numbers. While representing images or one-dimensional signals as lists of numbers is straightforward, text requires a bit more work. That's what vector space models do – they map words, sentences, or whole documents to numerical vectors. There are many ways to do it and the deep learning era brought around a couple of [clever solutions](https://github.com/MaxwellRebo/awesome-2vec) to that problem. In this post we're going to reinvent a classic document-level vector space model called *term frequency - inverse document frequency*. We'll then use it to build a simple search engine!
 
 ## First attempt: sets of words
-Depending on the application, we might want the document vectors to have different properties. We want to build a search engine, so an ideal model would distribute documents in a multi-dimensional space in such a way that documents similar in meaning end up close to each other. Note that we want every vector to have the same length, as otherwise it would be hard to come up with a similarity metric.
+Depending on the application, we might want the document vectors to have different properties. Since we want to build a search engine, an ideal model would map similar documents to similar vectors. Note that we want every vector to have the same length. That way it will be easier to come up with a similarity metric.
 
 I always find it easier to work on an example, so let's say these are our documents:
 
@@ -27,11 +23,13 @@ third = 'spam egg spam and spam'
 documents = [first, second, third]
 ```
 
-We'll start with a simple idea. Let's assign every word to a column and represent documents as rows of 1s and 0s, where 1 means the corresponding word occurs in the document and 0 means it doesn't:
+We'll start with a simple idea. Let's represent documents as rows of 1s and 0s, where 1 means a certain word occurs in the document and 0 means it doesn't:
 
 {% include image name="first_attempt.png" width="500" caption=""%}
 
-The matrix of this form is called a *term-document matrix*. The numbers in the matrix are *weights*. A document is represented by a *document vector* – a list of weights, each corresponding to a *term*. To build the model, we first need to build the list of terms, also known as the *dictionary*: 
+The matrix of this form is called a *term-document matrix*. Every document is represented by a *document vector* – a list of *weights*, each corresponding to a *term*. Note that the terms are limited to a pre-defined set, called a *vocabulary*. Any word outside of that set is simply ignored when building document vectors. The easiest way to build the vocabulary is to include every word that occurs in any of the documents. This is not always feasible, especially with large collections of documents. Note that the dimensionality of document vectors is the same as the size of the dictionary.
+
+To build our basic model in Python, we first need to create the vocabulary:
 
 ```python
 def build_vocabulary(documents):
@@ -48,7 +46,7 @@ print(vocabulary)
 ['and', 'bacon', 'egg', 'homar', 'sausage', 'spam']
 ```
 
-Once we have the vocabulary, we can use it to build the term-document matrix (`tdm` for friends):
+We can now build the term-document matrix (`tdm` for short):
 ```python
 def build_tdm(documents, vocabulary):
     tdm = []
@@ -63,12 +61,14 @@ print(tdm)
 [[1, 1, 1, 0, 1, 1], [1, 1, 0, 1, 1, 1], [1, 0, 1, 0, 0, 1]]
 ```
 
-Ok, that works, but 
+If you feel your Python sense tingling and hear a voice in your head whisper "there should be a package for that", you're right! With a little help from scikit-learn, we can do all the above in two lines:
+
 ```python
 from sklearn.feature_extraction.text import CountVectorizer
 
 vectorizer = CountVectorizer(binary=True)
 tdm = vectorizer.fit_transform(documents).to_array()
+
 print(tdm)
 ```
 ```sh
@@ -76,7 +76,7 @@ print(tdm)
  [1 1 0 1 1 1]
  [1 0 1 0 0 1]]
 ```
-Nice! Of course, we can see the vocabulary as well:
+Neat! Of course, we can access the vocabulary as well:
 
 ```python
 vocabulary = vectorizer.get_feature_names()
@@ -92,8 +92,9 @@ print(vectorizer.transform(['spam spam aand spam']).toarray())
 ```
 
 
-
 ## From sets to bags
+Our first attempt is super simple, but not completely useless. It lets us run simple queries like "find all documents that contain *spam* but don't contain " 
+
 Again, each row of the matrix represents a document and each column corresponds to a term. The values are just raw counts of terms in respective documents. In the example above, "Emma" contains one occurence of *aardvark* and two occurences of *aardwolf*, but no occurences of *zulu*, while "Alice in Wonderland" features surprisingly many Zulus and no aard-creatures. 
 
 Now this is a pretty awful idea. First of all, we are using raw counts, so longer documents will result in much larger values. Even if we adjust for the length of document, the most frequent terms will likely be *the*, *be*, *to*, *of*, and the like, so all the vectors will end up pretty similar.
@@ -105,7 +106,7 @@ What we need is a cunning way to discount unimportant terms and bump up relevant
 * proportional to the frequency of $$t$$ in $$d$$,
 * inversely proportional to the percentage of documents in D containing $$t$$.
 
-Just by formulating the problem, we accidentaly discovered a weighting scheme aptly named *term frequency-inverse document frequency*: 
+Just by formulating the problem, we accidentaly discovered a weighting scheme aptly named *term frequency-inverse document frequency*:
 
 $$ \text{tf-idf}(t, d, D) = \text{tf}(t, d) \cdot \text{idf}(t, D) $$
 
@@ -115,11 +116,16 @@ $$ \text{tf}(t, d)=\frac{n_{t, d}}{\sum_{t' \in d}n_{t', d}}$$
 
 Inverse document frequency is usually calculated as the logarithm of the total number of documents divided by the number of documents containing $$t$$:
 
-$$ \text{idf}(t, D)=\log\frac{|D|}{|{d \in D: t \in d}|} $$
+{% katex display %}
+
+ \text{idf}(t, D)=\log\frac{|D|}{|{d \in D: t \in d}|}
+
+{% endkatex %}
 
 The notation is a bit cryptic, so let's return to our example:
 
 Say we want to find the tf-idf weights for all the terms in the second document. Let's start with term frequencies:
+
 ```python
 from collections import Counter 
 count = Counter(doc2.split())
@@ -141,7 +147,9 @@ As we can see, *spam* scores pretty high on term frequency. Hopefully, inversed 
 ```
 Whoa, looks like it fixed it a bit too much. Because *spam* and *and* appear in all documents, their inverse document frequency reduces to the logarithm of one, also known as zero. A common trick to avoid that is to use smoothing, i.e. add one inside the logarithm:
 
-$$ \text{idf}(t, D)=\log\left(1+\frac{|D|}{|{d \in D: t \in d}|}\right) $$
+{% katex display %}
+$$\text{idf}(t, D)=\log\left(1+\frac{|D|}{|{d \in D: t \in d}|}\right)$$
+{% endkatex %}
 
 ## Building a search engine
 ```python
@@ -154,5 +162,4 @@ documents = [
   'anaconda is an open source distribution of the python and r programming languages'
 ]
 ```
-
 ## Wrapping it up
