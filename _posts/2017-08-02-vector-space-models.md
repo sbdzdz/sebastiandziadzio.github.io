@@ -4,7 +4,7 @@ title:      "Vector space models"
 date:       2017-08-02
 summary:    Representing text documents with vectors.
 categories: nlp ml
-published: true
+published: false
 ---
 
 ## What is a vector space model?
@@ -29,7 +29,9 @@ We'll start with a simple idea. Let's represent documents as rows of 1s and 0s, 
 
 The matrix of this form is called a *term-document matrix*. Every document is represented by a *document vector* – a list of *weights*, each corresponding to a *term*. Note that the terms are limited to a pre-defined set, called a *vocabulary*. Any word outside of that set is simply ignored when building document vectors. The easiest way to build the vocabulary is to include every word that occurs in any of the documents. This is not always feasible, especially with large collections of documents. Note that the dimensionality of document vectors is the same as the size of the dictionary.
 
-To build our basic model in Python, we first need to create the vocabulary:
+//TODO fix code (`homar`)
+
+To implement our basic model in Python, we first need to build the vocabulary:
 
 ```python
 def build_vocabulary(documents):
@@ -46,7 +48,7 @@ print(vocabulary)
 ['and', 'bacon', 'egg', 'homar', 'sausage', 'spam']
 ```
 
-We can now build the term-document matrix (`tdm` for short):
+We can now create the term-document matrix (`tdm` for short):
 ```python
 def build_tdm(documents, vocabulary):
     tdm = []
@@ -93,7 +95,7 @@ print(vectorizer.transform(['spam spam aand spam']).toarray())
 
 
 ## From sets to bags
-Our first attempt is super simple, but not completely useless. It lets us run simple queries like "find all documents that contain *spam* but don't contain " 
+Our first attempt is very simple, but not completely useless. It lets us run boolean queries like "find all documents that contain *spam* and don't contain *sausage*". However, we loose a lot of valuable information 
 
 Again, each row of the matrix represents a document and each column corresponds to a term. The values are just raw counts of terms in respective documents. In the example above, "Emma" contains one occurence of *aardvark* and two occurences of *aardwolf*, but no occurences of *zulu*, while "Alice in Wonderland" features surprisingly many Zulus and no aard-creatures. 
 
@@ -118,7 +120,7 @@ Inverse document frequency is usually calculated as the logarithm of the total n
 
 {% katex display %}
 
- \text{idf}(t, D)=\log\frac{|D|}{|{d \in D: t \in d}|}
+\text{idf}(t, D)=\log\frac{|D|}{|{d \in D: t \in d}|}
 
 {% endkatex %}
 
@@ -148,7 +150,7 @@ As we can see, *spam* scores pretty high on term frequency. Hopefully, inversed 
 Whoa, looks like it fixed it a bit too much. Because *spam* and *and* appear in all documents, their inverse document frequency reduces to the logarithm of one, also known as zero. A common trick to avoid that is to use smoothing, i.e. add one inside the logarithm:
 
 {% katex display %}
-$$\text{idf}(t, D)=\log\left(1+\frac{|D|}{|{d \in D: t \in d}|}\right)$$
+\text{idf}(t, D)=\log\left(1+\frac{|D|}{|{d \in D: t \in d}|}\right)
 {% endkatex %}
 
 ## Building a search engine
