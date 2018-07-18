@@ -2,7 +2,7 @@
 title:       Sebastian Dziadzio 
 email:       sebastian.dziadzio@gmail.com
 author:      Sebastian Dziadzio
-description: "Hi! My name is Sebastian Dziadzio. I'm a software developer interested in machine learning, data science, tech buzzwords, and Oxford commas."
+description: "Hi! I'm Sebastian. I'm a software developer interested in machine learning, data science, tech buzzwords, and Oxford commas."
 baseurl:     ""
 url:         "http://sebastiandziadzio.com"
 date_format: "%B %-d, %Y"
@@ -18,7 +18,7 @@ bing_verification:
 # Optional features
 animated:             false
 show_related_posts:   true
-show_post_footers:    false
+show_post_footers:    true
 show_social_icons:    true
 ajaxify_contact_form: false
 enable_mathjax: false
