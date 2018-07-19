@@ -105,7 +105,7 @@ text:
 # Build settings
 markdown: kramdown
 kramdown:
-    math_engine: mathjax
+    math_engine: nil
     input: GFM
     highlighter: rouge 
 redcarpet:
@@ -117,5 +117,5 @@ sass:
 plugins:
   - jekyll-paginate
   - jekyll-sitemap
-# https://github.com/jekyll/jekyll/issues/2938
+
 exclude: [vendor, notebooks, Gemfile, Gemfile.lock, Rakefile, deploy.sh, scraps, latex, LICENSE.txt]
