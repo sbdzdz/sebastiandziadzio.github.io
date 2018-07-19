@@ -4,9 +4,10 @@ title: about
 permalink: /about/
 tags: about
 ---
-# Hi! My name is Sebastian.
+<p style="text-align:center;"><img src="/images/me.png" width="200" height="200" alt="Sebastian Dziadzio" class="center"/> </p>
+# Hi! I'm Sebastian.
 
-I'm a software developer with a passion for data science, machine learning, tech buzzwords, and Oxford commas. I love Python, have a love-hate relationship with R, and sometimes flirt with C++. When not coding, I'm usually fencing, reading, or playing Ultimate.
+I'm a software developer with a passion for machine learning, data science, tech buzzwords, and Oxford commas. I love Python, have a love-hate relationship with R, and sometimes flirt with C++. When not coding, I'm usually fencing, reading, or playing Ultimate.
 
 I live in Munich, working at [Cliqz](http://cliqz.com) on making the Internet more private.
 
