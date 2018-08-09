@@ -5,6 +5,7 @@ date:       2017-08-02
 summary:    Representing text documents with vectors.
 categories: nlp ml
 published: false
+typora-root-url: ../../blog
 ---
 
 ## What is a vector space model?
@@ -27,7 +28,7 @@ We'll start with a simple idea. Let's represent documents as rows of 1s and 0s, 
 
 {% include image name="first_attempt.png" width="500" caption=""%}
 
-The matrix of this form is called a *term-document matrix*. Every document is represented by a *document vector* – a list of *weights*, each corresponding to a *term*. Note that the terms are limited to a pre-defined set, called a *vocabulary*. Any word outside of that set is simply ignored when building document vectors. The easiest way to build the vocabulary is to include every word that occurs in any of the documents. This is not always feasible, especially with large collections of documents. Note that the dimensionality of document vectors is the same as the size of the dictionary.
+The matrix of this form is called a term-document matrix. Every document is represented by a document vector – a list of numbers, each corresponding to a term. Of course we can't use every term in the language, so we need to limit ourselves to a pre-defined set called a vocabulary. The easiest solution is to use all the words from all the documents. This is not always feasible, so it sometimes makes sense to limit the vocabulary to N most popular words. Note that the vocabulary size determines the dimensionality of document vectors.
 
 //TODO fix code (`homar`)
 
@@ -95,7 +96,17 @@ print(vectorizer.transform(['spam spam aand spam']).toarray())
 
 
 ## From sets to bags
-Our first attempt is very simple, but not completely useless. It lets us run boolean queries like "find all documents that contain *spam* and don't contain *sausage*". However, we loose a lot of valuable information 
+Our first attempt is very simple, but not completely useless. It lets us run boolean queries like "find all documents that contain *spam* and don't contain *sausage*". However, by reducing every document to a set of words we loose a lot of information. Sure, we can tell if a word occurs in the document, but we don't even know how many times it occured. Take the first document as an example:
+
+{% katex display %}
+\text{spam egg sausage and spam}
+{% endkatex %}
+
+In our binary model it is simply represented as an unordered set:
+
+{% katex display %}
+\text{\{spam, egg, and\}}
+{% endkatex %}
 
 Again, each row of the matrix represents a document and each column corresponds to a term. The values are just raw counts of terms in respective documents. In the example above, "Emma" contains one occurence of *aardvark* and two occurences of *aardwolf*, but no occurences of *zulu*, while "Alice in Wonderland" features surprisingly many Zulus and no aard-creatures. 
 
@@ -116,7 +127,7 @@ In the most popular variant, term frequency is the count of term $$t$$ in docume
 
 $$ \text{tf}(t, d)=\frac{n_{t, d}}{\sum_{t' \in d}n_{t', d}}$$
 
-Inverse document frequency is usually calculated as the logarithm of the total number of documents divided by the number of documents containing $$t$$:
+Inverse document frequency is usually calculated as the logarithm of the total number of documents divided by the number of documents containing $$t​$$:
 
 {% katex display %}
 
