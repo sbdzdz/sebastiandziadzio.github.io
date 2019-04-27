@@ -1,4 +1,4 @@
-# sebastiandziadzio.github.io/sebastiandziadzio.com
+# Website
 
 My [personal website.](http://sebastiandziadzio.com)
 
