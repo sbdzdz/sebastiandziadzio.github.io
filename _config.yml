@@ -1,5 +1,5 @@
 # Site settings
-title:       Sebastian Dziadzio 
+title:       Sebastian Dziadzio
 email:       sebastian.dziadzio@gmail.com
 author:      Sebastian Dziadzio
 description: "Hi! I'm Sebastian. I'm a software developer interested in machine learning, data science, tech buzzwords, and Oxford commas."
@@ -43,7 +43,7 @@ facebook_comments_number: 10
 github_username: sebastiandziadzio
 bitbucket_username:
 stackoverflow_id:
-twitter_username: sebadzia
+twitter_username: sbdzdz
 skype_username:
 steam_nickname:
 google_plus_id:
@@ -107,7 +107,7 @@ markdown: kramdown
 kramdown:
     math_engine: nil
     input: GFM
-    highlighter: rouge 
+    highlighter: rouge
 redcarpet:
   extensions: ['smart', 'tables', 'with_toc_data']
 permalink:    pretty
