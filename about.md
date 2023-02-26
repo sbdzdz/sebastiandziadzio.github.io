@@ -4,7 +4,7 @@ title: about
 permalink: /about/
 tags: about
 ---
-<p style="text-align:center;"><img src="/images/me.png" width="200" height="200" alt="Sebastian Dziadzio" class="center"/> </p>
+<p style="text-align:center;"><img src="/images/me.jpg" width="200" height="200" alt="Sebastian Dziadzio" class="center"/> </p>
 # Hi! I'm Sebastian.
 
 I'm an ELLIS/IMPRS-IS PhD Student at the University of Tübingen, supervised by Matthias Bethge and Tinne Tuytelaars. My main research interest is efficiently learning compositional and reusable visual representations.
