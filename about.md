@@ -1,7 +1,7 @@
 ---
 layout: page
 title: about
-permalink: /about/
+permalink: /
 tags: about
 ---
 <p style="text-align:center;"><img src="/images/me.jpg" width="200" height="200" alt="Sebastian Dziadzio" class="center"/> </p>
