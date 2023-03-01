@@ -1,8 +1,8 @@
 # Site settings
 title:       Sebastian Dziadzio
-email:       sebastian.dziadzio@gmail.com
+email:       dziadzio@hey.com
 author:      Sebastian Dziadzio
-description: "Hi! I'm Sebastian. I'm a software developer interested in machine learning, data science, tech buzzwords, and Oxford commas."
+description: "Hi! I'm Sebastian. I'm a PhD Student in machine learning."
 baseurl:     ""
 url:         "http://sebastiandziadzio.com"
 date_format: "%B %-d, %Y"
@@ -40,7 +40,7 @@ facebook_appid:
 facebook_comments_number: 10
 
 # Social icons
-github_username: sebastiandziadzio
+github_username: sbdzdz
 bitbucket_username:
 stackoverflow_id:
 twitter_username: sbdzdz
