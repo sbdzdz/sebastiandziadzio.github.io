@@ -4,7 +4,7 @@ email:       dziadzio@hey.com
 author:      Sebastian Dziadzio
 description: "Hi! I'm Sebastian. I'm a PhD Student in machine learning."
 baseurl:     ""
-url:         "http://sebastiandziadzio.com"
+url:         "https://sebastiandziadzio.com"
 date_format: "%B %-d, %Y"
 
 # code highlighting
@@ -117,5 +117,6 @@ sass:
 plugins:
   - jekyll-paginate
   - jekyll-sitemap
+  - jekyll-redirect-from
 
 exclude: [vendor, notebooks, Gemfile, Gemfile.lock, Rakefile, deploy.sh, scraps, latex, LICENSE.txt]
