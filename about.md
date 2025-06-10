@@ -1,13 +1,15 @@
 ---
 layout: page
 title: about
-permalink: /about/
+permalink: /
 tags: about
 ---
-<p style="text-align:center;"><img src="/images/me.jpg" width="200" height="200" alt="Sebastian Dziadzio" class="center"/> </p>
-# Hi! I'm Sebastian.
+<!-- <p style="text-align:center;"><img src="/images/me.jpg" width="200" height="200" alt="Sebastian Dziadzio" class="center"/> </p> -->
+![Sebastian Dziadzio](/images/me.jpg){: .center width="200" height="200"}
 
-I'm an ELLIS/IMPRS-IS PhD Student at the University of Tübingen, supervised by Matthias Bethge and Tinne Tuytelaars. My main research interest is efficiently learning compositional and reusable visual representations.
+## Hi! I'm Sebastian.
+
+I'm an ELLIS/IMPRS-IS PhD Student at the University of Tübingen, supervised by Matthias Bethge. My main research interest is continual learning and evaluation at scale.
 
 Prior to returning to academia, I conducted research in industry, working as a scientist at the [Microsoft Mixed Reality & AI Lab](https://www.microsoft.com/en-us/research/lab/mixed-reality-ai-lab-cambridge/), and as an AI resident at [Microsoft Research Cambridge](https://www.microsoft.com/en-us/research/lab/microsoft-research-cambridge/).
 
