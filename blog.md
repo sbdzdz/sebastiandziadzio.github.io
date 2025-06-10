@@ -1,6 +1,6 @@
 ---
 layout: page
 title: blog
-permalink: /
+permalink: /blog/
 tags: blog
 ---
