@@ -4,30 +4,35 @@ title: papers
 permalink: /papers/
 tags: papers
 ---
-# Papers
 
-## 2021
+## Papers
 
-*Fake It Till You Make It: Face Analysis in the Wild Using Synthetic Data Alone,* ICCV 2021: [project page](https://microsoft.github.io/FaceSynthetics/), [abstract](https://openaccess.thecvf.com/content/ICCV2021/html/Wood_Fake_It_Till_You_Make_It_Face_Analysis_in_the_ICCV_2021_paper.html), [full text](https://openaccess.thecvf.com/content/ICCV2021/papers/Wood_Fake_It_Till_You_Make_It_Face_Analysis_in_the_ICCV_2021_paper.pdf).
+### 2025
 
-*Full-Body Motion from a Single Head-Mounted Device*, ICCV 2021: [project page](https://www.microsoft.com/en-us/research/publication/full-body-motion-from-a-single-head-mounted-device-generating-smpl-poses-from-partial-observations/), [abstract](https://openaccess.thecvf.com/content/ICCV2021/html/Dittadi_Full-Body_Motion_From_a_Single_Head-Mounted_Device_Generating_SMPL_Poses_ICCV_2021_paper.html), [full text](https://openaccess.thecvf.com/content/ICCV2021/papers/Dittadi_Full-Body_Motion_From_a_Single_Head-Mounted_Device_Generating_SMPL_Poses_ICCV_2021_paper.pdf).
+*ONEBench to Test Them All: Sample-Level Benchmarking Over Open-Ended Capabilities.* Adhiraj Ghosh*, Sebastian Dziadzio*, Ameya Prabhu, Vishaal Udandarao, Samuel Albanie, Matthias Bethge. ACL 2025. [arxiv](https://arxiv.org/abs/2412.06745)
 
-## 2020
+*How to Merge Your Multimodal Models Over Time?* Sebastian Dziadzio*, Vishaal Udandarao*, Karsten Roth*, Ameya Prabhu, Zeynep Akata, Samuel Albanie, Matthias Bethge. CVPR 2025. [arxiv](https://arxiv.org/abs/2412.06712)
 
-*A High Fidelity Synthetic Face Framework for Computer Vision*, arXiv preprint: [full text](https://arxiv.org/abs/2007.08364).
+### 2024
 
-## 2016
+*A Practitioner's Guide to Continual Multimodal Pretraining.* Karsten Roth*, Vishaal Udandarao*, Sebastian Dziadzio, Ameya Prabhu, Mehdi Cherti, Oriol Vinyals, Olivier Hénaff, Samuel Albanie, Matthias Bethge, Zeynep Akata. NeurIPS 2024. [arxiv](https://arxiv.org/abs/2408.14471)
 
-*Application of Semantic and Morphosyntactic Language Models in Automatic Speech Recognition*, MSc Thesis: [full text](/papers/master.pdf).
+### 2023
 
-## 2015
+*Infinite dSprites for Disentangled Continual Learning: Separating Memory Edits from Generalization.* Sebastian Dziadzio, Çağatay Yıldız, Gido M van de Ven, Tomasz Trzciński, Tinne Tuytelaars, Matthias Bethge. CoLLAs 2023. [PMLR](https://proceedings.mlr.press/v274/dziadzio25a.html)
 
-*Understanding Context with ContextViewer – a Tool for Visualization and Initial Processing of Mobile Sensors Data*, Lecture Notes in Computer Science: [abstract](https://link.springer.com/chapter/10.1007/978-3-319-25591-0_6).
+*Multiscale Neural Operators for Solving Time-Independent PDEs.* Winfried Ripken, Lisa Coiffard, Felix Pieper, Sebastian Dziadzio. NeurIPS 2023 Workshop on the Symbiosis of Deep Learning and Differential Equations. [arxiv](https://arxiv.org/abs/2311.05964)
 
-*Comparison of Language Models Trained on Written Texts and Speech Transcripts in the Context of Automatic Speech Recognition*, IEEE FedCSIS: [full text](https://annals-csis.org/Volume_5/pliks/386.pdf).
+### 2022
 
-## 2014
+*Computing Photorealistic Versions of Synthetic Images.* Stephan Joachim Garbin, Marek Adam Kowalski, Matthew Alastair Johnson, Tadas Baltrusaitis, Martin De La Gorce, Virginia Estellers Casas, Sebastian Karol Dziadzio, Jamie Daniel Joseph Shotton. US Patent 11,354,846.
 
-*The Speech Technology Course at AGH University of Science and Technology in Cracow as an Example of Interdisciplinary Teaching*, Zamojskie Studia i Materiały: [abstract](https://www.infona.pl/resource/bwmeta1.element.desklight-8158ba22-2cc7-4b4b-b347-53c0f9783595).
+### 2021
 
-*Unit Selection Text-to-Speech System for Polish*, BSc Thesis: [full text](/papers/bachelor.pdf).
+*Fake It Till You Make It: Face Analysis in the Wild Using Synthetic Data Alone.* Erroll Wood, Tadas Baltrušaitis, Charlie Hewitt, Sebastian Dziadzio, Thomas J Cashman, Jamie Shotton. ICCV 2021: [arxiv](https://arxiv.org/abs/2109.15102).
+
+*Full-Body Motion from a Single Head-Mounted Device: Generating SMPL Poses from Partial Observations.* Andrea Dittadi, Sebastian Dziadzio, Darren Cosker, Ben Lundell, Thomas J Cashman, Jamie Shotton. ICCV 2021: [ieee](https://ieeexplore.ieee.org/document/9710218).
+
+### 2020
+
+*A High Fidelity Synthetic Face Framework for Computer Vision.* Tadas Baltrusaitis, Erroll Wood, Virginia Estellers, Charlie Hewitt, Sebastian Dziadzio, Marek Kowalski, Matthew Johnson, Thomas J Cashman, Jamie Shotton. arXiv preprint: [arxiv](https://arxiv.org/abs/2007.08364).
