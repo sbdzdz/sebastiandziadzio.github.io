@@ -1,8 +1,6 @@
 ---
 layout: default
 title: blog
-permalink: /blog/
-tags: blog
 ---
 
 {% assign posts_count = paginator.posts | size %}
@@ -25,6 +23,8 @@ tags: blog
         </div>
       {% endfor %}
     </div>
+
+    {% include pagination.html %}
   {% else %}
     <h1 class='center'>{{ site.text.index.coming_soon }}</h1>
   {% endif %}
