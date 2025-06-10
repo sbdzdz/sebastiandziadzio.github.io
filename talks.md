@@ -5,9 +5,9 @@ permalink: /talks/
 tags: talks
 ---
 
-# Talks
+## Talks
 
-*The Taming of the Shoggoth: Promises and Risks of Large Language Models*, Data Science Summit ML Edition, Warsaw 2023: [slides](/talks/dss/dss.pdf).
+*Taming of the Shoggoth: Promises and Risks of Large Language Models*, Data Science Summit ML Edition, Warsaw 2023: [slides](/talks/dss/dss.pdf).
 
 *Fake It Until You Make It: Synthetic Data in Machine Learning*, Ghost Applied ML Day, Poznań 2023.
 
