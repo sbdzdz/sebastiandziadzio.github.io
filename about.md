@@ -7,7 +7,7 @@ tags: about
 <!-- <p style="text-align:center;"><img src="/images/me.jpg" width="200" height="200" alt="Sebastian Dziadzio" class="center"/> </p> -->
 ![Sebastian Dziadzio](/images/me.jpg){: .center width="200" height="200"}
 
-## Hi! I'm Sebastian.
+## Hi! I'm Sebastian
 
 I'm an ELLIS/IMPRS-IS PhD Student at the University of Tübingen, supervised by Matthias Bethge. My main research interest is continual learning and evaluation at scale.
 
