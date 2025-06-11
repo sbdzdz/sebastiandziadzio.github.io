@@ -4,7 +4,6 @@ title: about
 permalink: /about/
 tags: about
 ---
-<!-- <p style="text-align:center;"><img src="/images/me.jpg" width="200" height="200" alt="Sebastian Dziadzio" class="center"/> </p> -->
 ![Sebastian Dziadzio](/images/me.jpg){: .center width="200" height="200"}
 
 ## Hi! I'm Sebastian
