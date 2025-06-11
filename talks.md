@@ -7,10 +7,26 @@ tags: talks
 
 ## Talks
 
-*Taming of the Shoggoth: Promises and Risks of Large Language Models*, Data Science Summit ML Edition, Warsaw 2023: [slides](/talks/dss/dss.pdf).
+[How to Merge Your Multimodal Models Over Time?](/talks/iclr/iclr.pdf) \
+ICLR Workshop on Modularity for Collaborative, Decentralized, and Continual Deep Learning \
+Singapore 2025
 
-*Fake It Until You Make It: Synthetic Data in Machine Learning*, Ghost Applied ML Day, Poznań 2023.
+[Lifelong Benchmarking](/talks/cvpr/cvpr.pdf) \
+CVPR Workshop on Test-Time Adaptation \
+Seattle 2024
 
-*Best Practices for ML Engineering*, ELLIS Doctoral Symposium, Alicante 2022: [slides](/talks/eds/eds.pdf).
+[Taming of the Shoggoth: Promises and Risks of Large Language Models](/talks/dss/dss.pdf) \
+Data Science Summit ML Edition \
+Warsaw 2023
 
-*NLP for the Impatient*, PyData Conference, Warsaw 2017: [slides](/talks/pydata/pydata.pdf), [video](https://www.youtube.com/watch?v=_Fl0NHRL_fY).
+[Fake It Until You Make It: Synthetic Data in Machine Learning](/talks/ghost/ghost.pdf) \
+Ghost Applied ML Day \
+Poznań 2023
+
+[Best Practices for ML Engineering](/talks/eds/eds.pdf) \
+ELLIS Doctoral Symposium \
+Alicante 2022
+
+[NLP for the Impatient](https://www.youtube.com/watch?v=_Fl0NHRL_fY) \
+PyData Conference \
+Warsaw 2017
