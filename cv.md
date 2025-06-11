@@ -1,7 +1,7 @@
 ---
 layout: redirect
 title: cv
-permalink: /cv/
+permalink: /resume
 redirect: /cv/cv.pdf
 tags: cv
 ---
