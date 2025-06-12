@@ -38,13 +38,13 @@ Winfried Ripken, Lisa Coiffard, Felix Pieper, **Sebastian Dziadzio** \
 NeurIPS 2023 DLDE Workshop
 
 [Controllable Image Generation](https://patents.google.com/patent/US11748932B2/en) \
-Marek Kowalski, Stephan Garbin, Matthew Johnson, Tadas Baltrusaitis, Martin De La Gorce, Virginia Estellers, **Sebastian Karol Dziadzio** \
+Marek Kowalski, Stephan Garbin, Matthew Johnson, Tadas Baltrusaitis, Martin De La Gorce, Virginia Estellers, **Sebastian Dziadzio** \
 US Patent 11,748,932
 
 ### 2022
 
 [Computing Photorealistic Versions of Synthetic Images](https://patents.google.com/patent/US11354846B2/en) \
-Stephan Garbin, Marek Kowalski, Matthew Johnson, Tadas Baltrusaitis, Martin De La Gorce, Virginia Estellers \
+Stephan Garbin, Marek Kowalski, Matthew Johnson, Tadas Baltrusaitis, Martin De La Gorce, Virginia Estellers, **Sebastian Dziadzio**, Jamie Shotton \
 US Patent 11,354,846
 
 ### 2021
