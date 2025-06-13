@@ -24,7 +24,7 @@ In review
 ### 2024
 
 [A Practitioner's Guide to Continual Multimodal Pretraining](https://arxiv.org/abs/2408.14471) \
-K. Roth\*, V. Udandarao\*, **S. Dziadzio**, A. Prabhu, M. Cherti, O. Vinyals, O. Hénaff, S. Albanie, M. Bethge, Z. Akata \
+K. Roth\*, V. Udandarao\*, **S. Dziadzio**, A. Prabhu et al. \
 NeurIPS 2024
 
 ### 2023
@@ -38,27 +38,27 @@ W. Ripken, L. Coiffard, F. Pieper, **S. Dziadzio** \
 NeurIPS 2023 DLDE Workshop
 
 [Controllable Image Generation](https://patents.google.com/patent/US11748932B2/en) \
-M. Kowalski, S. Garbin, M. Johnson, T. Baltrusaitis, M. De La Gorce, V. Estellers, **S. Dziadzio** \
+M. Kowalski, S. Garbin, M. Johnson, T. Baltrušaitis, M. De La Gorce, V. Estellers, **S. Dziadzio** \
 US Patent 11,748,932
 
 ### 2022
 
 [Computing Photorealistic Versions of Synthetic Images](https://patents.google.com/patent/US11354846B2/en) \
-S. Garbin, M. Kowalski, M. Johnson, T. Baltrusaitis, M. De La Gorce, V. Estellers, **S. Dziadzio**, J. Shotton \
+S. Garbin, M. Kowalski, M. Johnson, T. Baltrušaitis, M. De La Gorce, V. Estellers, **S. Dziadzio**, J. Shotton \
 US Patent 11,354,846
 
 ### 2021
 
 [Fake It Till You Make It: Face Analysis in the Wild Using Synthetic Data Alone](https://arxiv.org/abs/2109.15102) \
-E. Wood, T. Baltrušaitis, C. Hewitt, **S. Dziadzio**, T. J. Cashman, J. Shotton \
+E. Wood, T. Baltrušaitis, C. Hewitt, **S. Dziadzio**, T. Cashman, J. Shotton \
 ICCV 2021
 
 [Full-Body Motion from a Single Head-Mounted Device: Generating SMPL Poses from Partial Observations](https://ieeexplore.ieee.org/document/9710218) \
-A. Dittadi, **S. Dziadzio**, D. Cosker, B. Lundell, T. J. Cashman, J. Shotton \
+A. Dittadi, **S. Dziadzio**, D. Cosker, B. Lundell, T. Cashman, J. Shotton \
 ICCV 2021
 
 ### 2020
 
 [A High Fidelity Synthetic Face Framework for Computer Vision](https://arxiv.org/abs/2007.08364) \
-T. Baltrusaitis, E. Wood, V. Estellers, C. Hewitt, **S. Dziadzio**, M. Kowalski, M. Johnson, T. J. Cashman, J. Shotton \
+T. Baltrušaitis, E. Wood, V. Estellers, C. Hewitt, **S. Dziadzio**, M. Kowalski, M. Johnson, T. Cashman, J. Shotton \
 Technical Report
