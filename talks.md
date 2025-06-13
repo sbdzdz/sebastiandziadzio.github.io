@@ -7,7 +7,7 @@ tags: talks
 
 ## Talks
 
-[How to Merge Your Multimodal Models Over Time?](/talks/iclr/iclr.pdf) \
+[How to Merge Your Multimodal Models Over Time?](https://www.youtube.com/watch?v=MUwGQGLLeVQ) \
 ICLR Workshop on Modularity for Collaborative, Decentralized, and Continual Deep Learning \
 Singapore 2025
 
