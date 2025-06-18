@@ -27,11 +27,11 @@ In review
 K. Roth\*, V. Udandarao\*, **S. Dziadzio**, A. Prabhu et al. \
 NeurIPS 2024
 
-### 2023
-
 [Infinite dSprites for Disentangled Continual Learning: Separating Memory Edits from Generalization](https://proceedings.mlr.press/v274/dziadzio25a.html) \
 **S. Dziadzio**, Ç. Yıldız, G. M. van de Ven, T. Trzciński, T. Tuytelaars, M. Bethge \
-CoLLAs 2023
+CoLLAs 2024
+
+### 2023
 
 [Multiscale Neural Operators for Solving Time-Independent PDEs](https://arxiv.org/abs/2311.05964) \
 W. Ripken, L. Coiffard, F. Pieper, **S. Dziadzio** \
