@@ -7,6 +7,16 @@ tags: papers
 
 ## Papers
 
+### 2026
+
+[RevengeBench: Reverse Engineering Code-Space Policies from Behavioral Experiments](https://arxiv.org/abs/2606.26094) \
+B. Rahmani\*, **S. Dziadzio**\*, J. Strüber\*, S. Hernández-Gutiérrez, M. Bethge \
+In review
+
+[DataComp-VLM: Improved Open Datasets for Vision-Language Models](https://arxiv.org/abs/2606.28551) \
+M. Farina et al. \
+In review
+
 ### 2025
 
 [ONEBench to Test Them All: Sample-Level Benchmarking Over Open-Ended Capabilities](https://arxiv.org/abs/2412.06745) \
