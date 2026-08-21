@@ -13,3 +13,8 @@
         <a href="{{ page.url }}">{{ page.title }}</a>
     {% endif %}
 {% endfor %}
+{% comment %}
+  The CV is a static PDF rather than a Jekyll page, so it has no front matter for
+  the tag loops above to match on -- hence the direct link.
+{% endcomment %}
+<a href="{{ "/cv/cv.pdf" | prepend: site.baseurl }}">cv</a>
